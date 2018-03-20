@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    //基本数据类型
+    //number，string,boolean,null,undefined
+    //引用数据类型
+    //object：{},[],/^$/,Date
+    //function
+
+    var  num = 12; //  基本数据类型是操作值的
+
+    /* 引用数据类型是操作引用地址的 */
+    var obj = {
+      name:"珠峰培训",
+      age:7
+    }
+    function fn(){
+      console.log("勿忘出新放的始终...")
+    }
+
+    // 1. 当浏览器加载html页面的时候首先会提供一个供全局就js代码执行的环境->全局作用域
+    // （global/window）
+
+    console.log(fn);//->把整个函数定义部分(函数本身)在控制台内输出
+    console.log(fn());//-> 把当前函数执行的返回结果（return后面写是啥，返回值就是啥，没有return，默认返回值是undefinded）
+  </script>
+</body>
+</html>

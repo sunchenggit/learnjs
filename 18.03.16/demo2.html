@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    // 2.预解释（变量提升）自带的机制
+    // 在当前的作用域中，js代码执行之前，浏览器首先会默认的把所有的带var和function的进行提前申明或者定义
+    // 1) 理解声明和定义
+    // var num =  12；
+    // 声明（ declare）：var num; ->告诉浏览器在全局作用域中有一个num的变量了->如果一个变量只是声明了但是没有赋值，默认值就是undefined
+    // 定义（defined）：num = 12; ->给我们的变量进行赋值
+    // 2) 对于带var和function关键字在预解释的时候操作还是不一样的
+    // var ->  在预解释的时候只是提前声明
+    // function -> 在预解释的时候提前的申明和定义都完成了
+    //
+    //3) 预解释只发生在当前作用域下，例如：开始只对window下的进行预解释，只有函数执行的时候才会对函数中的进行预解释
+
+    console.log(num);//undefined
+    var num = 12;
+    var obj = {
+      name:"珠峰培训",
+      age:7
+    }
+
+    fn(1,2);//3 可以在上面执行，因为预解释的时候声明+定义就已经完成了
+    function fn(num1,num2){
+      var total = num1 + num2;
+      console.log(total);
+    }
+
+
+    //3.js中内存的分类
+    // 栈内存：用来提供一个供js代码执行的环境 -> 作用域（全局作用于/私有作用域）
+    // 堆内存：用来存储引用数据类型的值 ->对象存储的是属性名和属性值，函数存储的是代码字符串...
+  </script>
+</body>
+</html>

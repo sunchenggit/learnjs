@@ -19,30 +19,30 @@
 // console.log(2+(i++)+(++i)+(++i)+(i++));//  2+5+7+8+8 = 30
 // console.log(i);// i = 9
 
-  // function fn(){
-  //   var i = 10;
-  //   return function(n){
-  //     console.log(n + (++i));
-  //   }
-  // }
-  //
-  // var f = fn();
-  // f(10);// 21
-  // f(20);// 32
-  // fn()(10);// 21
-  // fn()(20);// 31
-  //
-
-  function fn(i) {
-    return function(n) {
-      console.log(n+ i++);
+  function fn(){
+    var i = 10;
+    return function(n){
+      console.log(n + (++i));
     }
   }
-  var  f =  fn(13);
-  f(12);// ->25
-  f(14);// -> 28
-  fn(15)(12);// -> 27
-  fn(16)(13);// -> 29
+
+  var f = fn();
+  f(10);// 21
+  f(20);// 32
+  fn()(10);// 21
+  fn()(20);// 31
+  //
+
+  // function fn(i) {
+  //   return function(n) {
+  //     console.log(n+ i++);
+  //   }
+  // }
+  // var  f =  fn(13);
+  // f(12);// ->25
+  // f(14);// -> 28
+  // fn(15)(12);// -> 27
+  // fn(16)(13);// -> 29
 
   //  思考题：用闭包作用域的方式实现选项卡循环绑定事件的处理
 

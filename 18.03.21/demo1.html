@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+// ++i和i++ 的区别
+// 都是自身累加1，在和其他值相加的时候是有区别的
+// i++：先拿i的值进行运算，运算完成后本身在+1
+// ++i: 先本身累加1，然后拿累加完成的结果去运算
+// var i = 5;
+// console.log(1+(i++));// -> 先输出 1+i=6，然后i本身在加一，i=i+1=6
+// console.log(1+(++i));// -> 7 i=6
+// console.log(2+(i++)+(++i)+(++i)+(i++));//  2+5+7+8+8 = 30
+// console.log(i);// i = 9
+
+  // function fn(){
+  //   var i = 10;
+  //   return function(n){
+  //     console.log(n + (++i));
+  //   }
+  // }
+  //
+  // var f = fn();
+  // f(10);// 21
+  // f(20);// 32
+  // fn()(10);// 21
+  // fn()(20);// 31
+  //
+
+  function fn(i) {
+    return function(n) {
+      console.log(n+ i++);
+    }
+  }
+  var  f =  fn(13);
+  f(12);// ->25
+  f(14);// -> 28
+  fn(15)(12);// -> 27
+  fn(16)(13);// -> 29
+
+  //  思考题：用闭包作用域的方式实现选项卡循环绑定事件的处理
+
+</script>
+</body>
+</html>

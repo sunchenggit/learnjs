@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>this</title>
+  <title>9.this</title>
 </head>
 <body>
 
@@ -16,6 +16,7 @@
   // 1. 函数执行，首先看函数名前是否有".",有的话"."前面是谁this就是谁；没有的话this就是window
   // 2. 自执行函数中的this永远是window
   // 3. 给元素的某一个事件绑定方法，当事件触发的时候，执行对应的方法，方法中的this是当前的元素
+  // 4. 在构造函数模式当中，类中（函数体中）出现的 this.xxx = xxx;中的this是当前类的一个实例
   //console.log(this);//window
   // function chifan(){
   //   // this -> zhang

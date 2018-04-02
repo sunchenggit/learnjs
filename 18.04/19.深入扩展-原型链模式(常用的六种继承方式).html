@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>19.深入扩展-原型链模式(常用的六种继承方式)</title>
+</head>
+<body>
+  <script>
+    /* 可枚举和不可枚举 */
+      // var obj = {};      //  字面量方法
+      // var obja = new Object();    // 实例方式
+
+      // var num = 1;
+      // var num = new Number(1);  //这里的num是 对象
+
+      Object.prototype.aaa = function () {
+        console.log(aaa);
+      }
+      var obj = {
+        name: "珠峰培训",
+        age: 19
+      }
+
+      for(var key in obj) {
+        // console.log(obj[key]);
+        // -> for in 循环在遍历的时候，默认的话可以把自己私有的和在它所属类原型上扩展的属性和方法都可以遍历到，但是一般情况下，我们遍历一个对象只需要遍历私有的即可，我们可以使用一下的判断进行处理：
+        // if(obj.propertyIsEnumerable(key)){ // 判断是否可枚举
+        //   console.log(obj[key]);
+        // }
+
+        if(obj.hasOwnProperty(key)){      // 判断是否为私有的
+          console.log(key);
+        }
+      }
+
+  </script>
+
+  <p>视频已看前15分钟</p>
+</body>
+</html>

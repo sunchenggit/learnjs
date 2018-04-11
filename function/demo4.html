@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数中的arguments</title>
+</head>
+<body>
+
+<script>
+// function sum(){
+//   var total = null;
+//   for(var i = 0; i < arguments.length; i++) {
+//     var cur = arguments[i];//=> 每一轮循环获取当前传递的那个实参值
+//     //=>为了防止字符串+数字是字符串拼接而不是数字累加，我们最好把它的数据类型首先转换为数字类型
+//     cur = Number(cur);
+//
+//     //=>为了防止传递的是非有效数字(数字+NaN=NaN)，我们最好做一下非有效数字的检测：有效数字才进行累加
+//     if(isNaN(cur) === false){
+//       total += cur;
+//     }
+//   }
+//   console.log(total);
+// }
+
+//=> 任意数求和
+function sum(){
+  var total = null;
+  for(var i = 0; i < arguments.length; i++) {
+    var cur = Number(arguments[i]);
+    !isNaN(cur) ? total += cur : null;
+  }
+  console.log(total);
+}
+
+</script>
+</body>
+</html>

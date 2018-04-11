@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数中的 retuan</title>
+</head>
+<body>
+
+  <script>
+    function sum(){
+      var total = null;
+      for(var i = 0; i < arguments.length; i++) {
+        var cur = Number(arguments[i]);
+        !isNaN(cur) ? total += cur : null;
+      }
+      return total;  // RETURN后面跟着的都是值(返回的都是值):此处不是把total变量返回，而是把total存储的值返回 <==> RETURN 60;
+    }
+    console.log(sum(10,20,23));
+    //=>sum:代表的是函数本身
+    //=>sum():让函数先执行，代表的是当前函数返回结果(RETURN后面是啥，相当于函数返回的是啥)
+  </script>
+</body>
+</html>

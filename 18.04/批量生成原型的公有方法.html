@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>批量生成原型的公有方法</title>
+</head>
+<body>
+
+<script>
+  function Fn () {
+    this.x = 100;
+  }
+
+  var pro = Fn.prototype;
+  pro.a = function () {}
+  pro.b = function () {}
+
+  Fn.prototype = {
+    this.a = function () {},
+    this.b = function () {},
+    this.c = function () {}
+  }
+
+  // 如果之前原型上存在一些方法的话，我们现在新创建的这个对象会把之前的那些方法都给覆盖掉
+</script>
+</body>
+</html>

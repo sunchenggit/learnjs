@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>递归排序</title>
+</head>
+<body>
+
+<script>
+//=> 递归？
+//函数自己调用自己
+
+  // function fn(num) {
+  //   console.log(num);
+  //   if(num === 0) {
+  //     return;
+  //   }
+  //   fn(num-1);
+  // }
+  //
+  // fn(10);
+
+  //=> 面试题：1~100之间，把所有能被3并且能被5整除的获取到，然后累加求和
+  //=> 方案一
+  // var total = null;
+  // for(var i = 0; i < 100; i++){
+  //   if(i%3 == 0 && i%5 == 0) {
+  //     console.log(i);
+  //     total+=i;
+  //   }
+  // }
+  // console.log(total); //=>315
+
+  //=> 方案二：递归
+  // function fn(num) {
+  //   if(num > 100) {
+  //     return 0;
+  //   }
+  //   if(num % 15 === 0) {
+  //     return num + fn(num + 1);
+  //   }
+  //   return fn(num + 1);
+  // }
+  //
+  // console.log(fn(1));
+
+  //=> 需求：10以内所有偶数积
+  function fn (num) {
+    if(num < 1) {
+      return 1;
+    }
+
+    if(num % 2 === 0) {
+      console.log(num);
+      return num*fn(num-1);
+    }
+
+    return fn(num - 1);
+
+  }
+  console.log(fn(10));
+
+  //var ary = [12,13,23,14,16,25,11]
+</script>
+</body>
+</html>

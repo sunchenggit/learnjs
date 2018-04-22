@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  Array.prototype.aa = 100;
+
+  var ary = [12, 23, 34];
+  //=> for循环操作
+  /*for(var i = 0; i < ary.length; i++){
+    console.log(ary[i])
+  }
+  //=> for in循环
+  for(var key in ary){
+    // key:属性名（数组中的属性名是索引）
+    console.log(ary[key]);
+  }*/
+  console.log(ary);
+  // => for循环只能遍历到数组私有的一些属性，而for in 循环可以把一些自定义公共属性也能遍历到
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>21.原型深入</title>
+</head>
+<body>
+  <div id="div1">
+    <p name="n1"></p>
+    <p name="n1"></p>
+    <p name="n2"></p>
+    <p name="n3"></p>
+    <p name="n2"></p>
+  </div>
+  <script>
+    var oDiv = document.getElementById('div1');
+    //var lists = oDiv.getElementsByName('n1');// oDiv.getElementsByName is not a function
+    var lists = document.getElementsByName('n1');// oDiv.getElementsByName is not a function
+    console.log(lists);
+
+    // 回去之后把 window 、document、div、a 的原型链一级一级的结构画出来，画出来之后每一级原型上都有那些属性和方法。那些兼容那些不兼容，这个方法是做什么用的？
+  </script>
+</body>
+</html>
